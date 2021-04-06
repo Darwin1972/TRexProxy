@@ -2,7 +2,7 @@ version: "3.5"
 
 services:
     trexproxy:
-        image: trexproxy-image:latest
+        image: darwin1968/trexproxy-image:latest
         container_name: trexproxy
         ports:
             - 8081:443
@@ -10,7 +10,7 @@ services:
             - trexnet
 
     trexwebapp:
-        image: trexapp-image:latest
+        image: darwin1968/trexapp-image:latest
         container_name: trexwebapp
         ports:
             - 8082:443
@@ -26,13 +26,6 @@ services:
         networks:
             - trexnet    
 
-    trexwebserver:
-        image: trexwebserver-image:latest
-        container_name: trexwebserver
-        ports:
-            - 8088:80
-        networks:
-            - trexnet    
 
 networks: 
     trexnet:
